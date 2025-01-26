@@ -14,11 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const level = levelMenu.value;
         
         if (level) {
-            puzzleContainer.style.visibility = 'visible'; // Mostrar al seleccionar nivel
-            for (let i = 1; i <= 6; i++) { // Como tenemos 6 piezas en 2 filas y 3 columnas
+            puzzleContainer.style.visibility = 'visible';
+            for (let i = 1; i <= 6; i++) {
                 const piece = document.createElement('div');
                 piece.classList.add('puzzle-piece');
-                piece.style.backgroundImage = `url('Imagenes/nivel_${level}/${i}.png')`; // Cambia la URL según el nivel
+                piece.style.backgroundImage = `url('Imagenes/nivel_${level}/${i}.png')`;
                 piece.dataset.position = i;
                 piece.addEventListener('click', selectPiece);
                 pieces.push(piece);
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
             shuffle(pieces);
             updateDisplay();
         } else {
-            puzzleContainer.style.visibility = 'hidden'; // Ocultar si no se selecciona nivel
+            puzzleContainer.style.visibility = 'hidden';
         }
     }
 
